@@ -1,0 +1,85 @@
+
+> consultancy_project@0.1.0 build
+> next build
+
+  ▲ Next.js 14.2.35
+  - Environments: .env.local
+
+   Creating an optimized production build ...
+Failed to compile.
+
+./app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./app/globals.css
+Error: Cannot find module 'tailwindcss-animate'
+Require stack:
+- /Users/jas/development/consultancy_project/tailwind.config.mjs
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at /Users/jas/development/consultancy_project/node_modules/next/dist/server/require-hook.js:55:36
+    at require.resolve (node:internal/modules/helpers:145:19)
+    at _resolve (/Users/jas/development/consultancy_project/node_modules/jiti/dist/jiti.js:1:246378)
+    at jiti (/Users/jas/development/consultancy_project/node_modules/jiti/dist/jiti.js:1:249092)
+    at /Users/jas/development/consultancy_project/tailwind.config.mjs:74:15
+    at evalModule (/Users/jas/development/consultancy_project/node_modules/jiti/dist/jiti.js:1:251913)
+    at jiti (/Users/jas/development/consultancy_project/node_modules/jiti/dist/jiti.js:1:249841)
+    at /Users/jas/development/consultancy_project/node_modules/tailwindcss/lib/lib/load-config.js:53:30
+    at loadConfig (/Users/jas/development/consultancy_project/node_modules/tailwindcss/lib/lib/load-config.js:55:6)
+
+Import trace for requested module:
+./app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./app/globals.css
+./app/globals.css
+
+./app/globals.css
+Error: Cannot find module 'tailwindcss-animate'
+Require stack:
+- /Users/jas/development/consultancy_project/tailwind.config.mjs
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at /Users/jas/development/consultancy_project/node_modules/next/dist/server/require-hook.js:55:36
+    at require.resolve (node:internal/modules/helpers:145:19)
+    at _resolve (/Users/jas/development/consultancy_project/node_modules/jiti/dist/jiti.js:1:246378)
+    at jiti (/Users/jas/development/consultancy_project/node_modules/jiti/dist/jiti.js:1:249092)
+    at /Users/jas/development/consultancy_project/tailwind.config.mjs:74:15
+    at evalModule (/Users/jas/development/consultancy_project/node_modules/jiti/dist/jiti.js:1:251913)
+    at jiti (/Users/jas/development/consultancy_project/node_modules/jiti/dist/jiti.js:1:249841)
+    at /Users/jas/development/consultancy_project/node_modules/tailwindcss/lib/lib/load-config.js:53:30
+    at loadConfig (/Users/jas/development/consultancy_project/node_modules/tailwindcss/lib/lib/load-config.js:55:6)
+    at tryRunOrWebpackError (/Users/jas/development/consultancy_project/node_modules/next/dist/compiled/webpack/bundle5.js:28:312989)
+    at __webpack_require_module__ (/Users/jas/development/consultancy_project/node_modules/next/dist/compiled/webpack/bundle5.js:28:131165)
+    at __nested_webpack_require_153728__ (/Users/jas/development/consultancy_project/node_modules/next/dist/compiled/webpack/bundle5.js:28:130607)
+    at /Users/jas/development/consultancy_project/node_modules/next/dist/compiled/webpack/bundle5.js:28:131454
+    at symbolIterator (/Users/jas/development/consultancy_project/node_modules/next/dist/compiled/neo-async/async.js:1:14444)
+    at done (/Users/jas/development/consultancy_project/node_modules/next/dist/compiled/neo-async/async.js:1:14824)
+    at Hook.eval [as callAsync] (eval at create (/Users/jas/development/consultancy_project/node_modules/next/dist/compiled/webpack/bundle5.js:13:28858), <anonymous>:15:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/jas/development/consultancy_project/node_modules/next/dist/compiled/webpack/bundle5.js:13:26012)
+    at /Users/jas/development/consultancy_project/node_modules/next/dist/compiled/webpack/bundle5.js:28:130328
+    at symbolIterator (/Users/jas/development/consultancy_project/node_modules/next/dist/compiled/neo-async/async.js:1:14402)
+-- inner error --
+Error: Cannot find module 'tailwindcss-animate'
+Require stack:
+- /Users/jas/development/consultancy_project/tailwind.config.mjs
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at /Users/jas/development/consultancy_project/node_modules/next/dist/server/require-hook.js:55:36
+    at require.resolve (node:internal/modules/helpers:145:19)
+    at _resolve (/Users/jas/development/consultancy_project/node_modules/jiti/dist/jiti.js:1:246378)
+    at jiti (/Users/jas/development/consultancy_project/node_modules/jiti/dist/jiti.js:1:249092)
+    at /Users/jas/development/consultancy_project/tailwind.config.mjs:74:15
+    at evalModule (/Users/jas/development/consultancy_project/node_modules/jiti/dist/jiti.js:1:251913)
+    at jiti (/Users/jas/development/consultancy_project/node_modules/jiti/dist/jiti.js:1:249841)
+    at /Users/jas/development/consultancy_project/node_modules/tailwindcss/lib/lib/load-config.js:53:30
+    at loadConfig (/Users/jas/development/consultancy_project/node_modules/tailwindcss/lib/lib/load-config.js:55:6)
+    at Object.<anonymous> (/Users/jas/development/consultancy_project/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!/Users/jas/development/consultancy_project/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!/Users/jas/development/consultancy_project/app/globals.css:1:7)
+    at /Users/jas/development/consultancy_project/node_modules/next/dist/compiled/webpack/bundle5.js:28:922493
+    at Hook.eval [as call] (eval at create (/Users/jas/development/consultancy_project/node_modules/next/dist/compiled/webpack/bundle5.js:13:28636), <anonymous>:7:1)
+    at Hook.CALL_DELEGATE [as _call] (/Users/jas/development/consultancy_project/node_modules/next/dist/compiled/webpack/bundle5.js:13:25906)
+    at /Users/jas/development/consultancy_project/node_modules/next/dist/compiled/webpack/bundle5.js:28:131198
+    at tryRunOrWebpackError (/Users/jas/development/consultancy_project/node_modules/next/dist/compiled/webpack/bundle5.js:28:312943)
+    at __webpack_require_module__ (/Users/jas/development/consultancy_project/node_modules/next/dist/compiled/webpack/bundle5.js:28:131165)
+    at __nested_webpack_require_153728__ (/Users/jas/development/consultancy_project/node_modules/next/dist/compiled/webpack/bundle5.js:28:130607)
+    at /Users/jas/development/consultancy_project/node_modules/next/dist/compiled/webpack/bundle5.js:28:131454
+    at symbolIterator (/Users/jas/development/consultancy_project/node_modules/next/dist/compiled/neo-async/async.js:1:14444)
+
+Generated code for /Users/jas/development/consultancy_project/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!/Users/jas/development/consultancy_project/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!/Users/jas/development/consultancy_project/app/globals.css
+
+Import trace for requested module:
+./app/globals.css
+
+
+> Build failed because of webpack errors

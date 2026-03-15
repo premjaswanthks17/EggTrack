@@ -1,5 +1,6 @@
 import { Bricolage_Grotesque, Albert_Sans } from "next/font/google";
 import "./globals.css";
+import { ShopProvider } from "@/components/ShopProvider";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -13,20 +14,18 @@ const albert = Albert_Sans({
   display: "swap",
 });
 
-import { Toaster } from "@/components/ui/toaster";
-
 export const metadata = {
-  title: "EggTrack | Production Dashboard",
-  description: "Track egg production, sales, and orders.",
+  title: "EggTrack | Shopkeeper Portal",
+  description: "Secure order management for EggTrack vendors.",
 };
 
 export default function RootLayout({ children }) {
-  // Enforce light mode and apply strict light theme styling
   return (
-    <html lang="en" className="light theme" style={{ colorScheme: "light" }}>
+    <html lang="en">
       <body className={`${bricolage.variable} ${albert.variable} antialiased min-h-screen bg-background`}>
-        {children}
-        <Toaster />
+        <ShopProvider>
+          {children}
+        </ShopProvider>
       </body>
     </html>
   );
