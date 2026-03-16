@@ -1,45 +1,55 @@
 #include <HX711.h>
+
+/**
+ * EggTrack Finalized ESP32 Serial Firmware
+ * This code reads the HX711 scale and prints values to Serial 
+ * in the format the Python IoT Bridge expects.
+ */
+
+// HX711 Pin Definitions
 #define DT 4
 #define SCK 5
 
 HX711 scale;
 
-// Note: You may need to tune this number for your specific load cell!
-// Common values are between 100 and 2000.
+// Calibration factor - tune this for your specific load cell!
 float calibration_factor = 1250; 
 
 void setup() {
   Serial.begin(115200);
+  
+  // Initialize scale
   scale.begin(DT, SCK);
   
-  Serial.println("Stabilizing scale...");
-  delay(2000); // Wait 2 seconds for the HX711 chip to stabilize when powered on
+  // Delay for sensor stability
+  Serial.println("[SYSTEM] Stabilizing...");
+  delay(2000); 
   
   scale.set_scale(calibration_factor);
-  scale.tare(); // Set the scale to 0 AFTER stabilizing
+  scale.tare(); // Zero the scale
+  
   Serial.println("Egg Weight Measurement System Ready");
 }
 
 void loop() {
-  // Get an average of 10 readings to smooth out any electrical noise
+  // Get average of 10 readings for stability
   float weight = scale.get_units(10);
 
-  // Auto zero correction - ignore drift when scale is empty
-  if(weight > -5 && weight < 5)
-  {
+  // Auto-zero correction: Ignore minor sensor drift
+  if(weight > -5 && weight < 5) {
     weight = 0;
   }
-  
-  // Limit to project range
-  if(weight > 1000)
-  {
+
+  // Safety limit for project range
+  if(weight > 1000) {
     weight = 1000;
   }
 
-  // Print exact format that Python script expects
+  // CRITICAL: Output format for Python bridge
   Serial.print("Weight: ");
-  Serial.print(weight, 1);
+  Serial.print(weight, 1); // 1 decimal place
   Serial.println(" g");
-  
+
+  // Loop delay (500ms)
   delay(500);
 }
